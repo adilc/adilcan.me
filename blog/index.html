@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog — Adil Can | Cloud, DevOps, AWS">
+    <title>Blog — Adil Can</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/cloud.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+    <style>
+        .blog-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-lg); }
+        .blog-grid .project-card { display: block; }
+        .blog-grid .project-card h3 { margin-top: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-logo">AC</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../cloud/index.html">Cloud</a></li>
+                <li><a href="index.html" style="color: var(--text-primary);">Blog</a></li>
+                <li><a href="../social/index.html">Videos & Social</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="cloud-hero section">
+        <div class="container">
+            <h1 class="animate-in">
+                <span class="gradient-text">Blog</span>
+            </h1>
+            <p class="animate-in animate-delay-1">
+                Thoughts on cloud computing, DevOps, AWS, and technology.
+            </p>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="blog-grid">
+
+                <a href="small-business-big-tech-why-saas-is-your-organizations-secret-weapon.html" class="project-card animate-in">
+                    <span class="timeline-date">2024-09-16</span>
+                    <h3>Small Business, Big Tech: Why SaaS is Your Organization’s Secret Weapon</h3>
+                </a>
+
+                <a href="a-small-and-medium-business-guide-to-industry-4-0-what-it-is-and-why-it-matters.html" class="project-card animate-in">
+                    <span class="timeline-date">2023-09-11</span>
+                    <h3>A Small and Medium Business Guide to Industry 4.0: What It Is and Why It Matters</h3>
+                </a>
+
+                <a href="nasil-aws-sertifikali-muhendis-olurum.html" class="project-card animate-in">
+                    <span class="timeline-date">2020-02-13</span>
+                    <h3>Nasıl AWS Sertifikalı mühendis olurum?</h3>
+                </a>
+
+                <a href="how-to-become-aws-certified-engineer.html" class="project-card animate-in">
+                    <span class="timeline-date">2020-02-13</span>
+                    <h3>How to become a Certified AWS Engineer</h3>
+                </a>
+
+                <a href="migrating-classic-website-architecture-to-aws.html" class="project-card animate-in">
+                    <span class="timeline-date">2019-09-25</span>
+                    <h3>Migrating Classic Website Architecture to AWS</h3>
+                </a>
+
+                <a href="cloud-services-comparison-aws-vs-azure-vs-gcp.html" class="project-card animate-in">
+                    <span class="timeline-date">2019-06-26</span>
+                    <h3>Cloud Services Comparison aws vs azure vs gcp</h3>
+                </a>
+
+                <a href="building-kubernetes-cluster-with-amazon-eks.html" class="project-card animate-in">
+                    <span class="timeline-date">2019-05-16</span>
+                    <h3>Building Kubernetes Cluster with Amazon EKS</h3>
+                </a>
+
+                <a href="how-to-choose-aws-region.html" class="project-card animate-in">
+                    <span class="timeline-date">2019-04-17</span>
+                    <h3>How to choose AWS Region?</h3>
+                </a>
+
+                <a href="2019-best-devops-tools.html" class="project-card animate-in">
+                    <span class="timeline-date">2019-04-08</span>
+                    <h3>2019 Best DevOps tools</h3>
+                </a>
+
+                <a href="what-is-jenkins.html" class="project-card animate-in">
+                    <span class="timeline-date">2019-04-05</span>
+                    <h3>What is Jenkins!</h3>
+                </a>
+
+                <a href="the-journey-begins.html" class="project-card animate-in">
+                    <span class="timeline-date">2018-11-12</span>
+                    <h3>Cloud Computing</h3>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Adil Can</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

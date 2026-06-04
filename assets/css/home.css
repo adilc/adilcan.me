@@ -1,0 +1,94 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-2xl) var(--space-lg);
+}
+
+.hero-content { max-width: 800px; }
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.5rem 1.2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+}
+
+.hero-badge .dot {
+    width: 8px; height: 8px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.hero h1 { margin-bottom: var(--space-md); letter-spacing: -1px; }
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.paths { padding: var(--space-2xl) 0; }
+
+.paths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.path-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+.path-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gradient-1);
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.path-card:hover::before { opacity: 1; }
+.path-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.path-card.social-card:hover { border-color: var(--accent-pink); }
+.path-card.social-card::before { background: var(--gradient-2); }
+
+.path-icon { font-size: 3rem; margin-bottom: var(--space-md); display: block; }
+.path-card h3 { margin-bottom: var(--space-sm); }
+.path-card p { margin-bottom: var(--space-lg); }

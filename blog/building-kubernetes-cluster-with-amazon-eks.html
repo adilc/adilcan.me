@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building Kubernetes Cluster with Amazon EKS — Adil Can">
+    <title>Building Kubernetes Cluster with Amazon EKS — Adil Can</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/cloud.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+    <style>
+        .blog-post { max-width: 800px; margin: 0 auto; padding-top: 120px; }
+        .blog-post h1 { margin-bottom: 0.5rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+        .blog-date { color: var(--accent-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 2rem; display: block; }
+        .blog-content { line-height: 1.8; }
+        .blog-content p { margin-bottom: 1.2rem; color: var(--text-secondary); }
+        .blog-content h2 { margin: 2rem 0 1rem; color: var(--text-primary); }
+        .blog-content h3 { margin: 1.5rem 0 0.8rem; color: var(--text-primary); }
+        .blog-content h4 { margin: 1.2rem 0 0.6rem; color: var(--text-primary); }
+        .blog-content ul, .blog-content ol { margin: 1rem 0; padding-left: 1.5rem; color: var(--text-secondary); }
+        .blog-content li { margin-bottom: 0.5rem; }
+        .blog-content a { color: var(--accent-blue); text-decoration: underline; }
+        .blog-content a:hover { color: var(--text-primary); }
+        .blog-content img { max-width: 100%; height: auto; border-radius: var(--radius-md); margin: 1rem 0; }
+        .blog-content pre { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem; overflow-x: auto; margin: 1rem 0; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); }
+        .blog-content blockquote { border-left: 3px solid var(--accent-blue); padding-left: 1rem; margin: 1rem 0; color: var(--text-muted); }
+        .blog-content figure { margin: 1.5rem 0; }
+        .blog-content figcaption { font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-blue); font-weight: 500; margin-bottom: 2rem; }
+        .back-link:hover { color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-logo">AC</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../cloud/index.html">Cloud</a></li>
+                <li><a href="index.html" style="color: var(--text-primary);">Blog</a></li>
+                <li><a href="../social/index.html">Videos & Social</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="blog-post">
+                <a href="index.html" class="back-link">← All Posts</a>
+                <h1>Building Kubernetes Cluster with Amazon EKS</h1>
+                <span class="blog-date">📅 2019-05-16</span>
+                <div class="blog-content">
+                    <p>Amazon Web Services (AWS) is a well-known cloud provider, while Kubernetes is becoming the easiest and more common way to manage your applications running on containers. </p>
+
+<h3>What is Kubernetes?</h3>
+
+<p>Kubernetes is a portable, extensible open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. </p>
+
+<figure class="wp-block-image"><img src="https://adilcan.me/wp-content/uploads/2019/05/image-2.png" alt="" class="wp-image-1358" /></figure>
+
+<p></p>
+
+<p>Many developers would like to get benefits to use Kubernetes Cluster to run their code, on the other hand it is a hard process to deploy Kubernetes Cluster.  Due to this reasons AWS announced a new service to manage and create Kubernetes cluster very easy and fastest way called Amazon Elastic Container Service (EKS)</p>
+
+<h3>Amazon EKS</h3>
+
+<p>Amazon Elastic Container Service for Kubernetes (Amazon EKS) makes it easy to deploy, manage, and scale containerized applications using&nbsp;<a href="https://aws.amazon.com/kubernetes/">Kubernetes</a>&nbsp;on AWS.</p>
+
+<p>Amazon EKS runs the Kubernetes management infrastructure for you across multiple AWS availability zones to eliminate a single point of failure. Amazon EKS is certified Kubernetes conformant so you can use existing tooling and plugins from partners and the Kubernetes community. Applications running on any standard Kubernetes environment are fully compatible and can be easily migrated to Amazon EKS.</p>
+
+<p>How it works?</p>
+
+<figure class="wp-block-image"><img src="https://d1.awsstatic.com/diagrams/product-page-diagrams/product-page-diagram-AmazonEKS-v2.dd41321fd3aa0915b93396c13e739351d2160ba8.png" alt="product-page-diagram-AmazonEKS-v2" /></figure>
+
+<h2 id="Benefits">Benefits</h2>
+
+<h4 id="No_Control_Plane_to_Manage">NO CONTROL PLANE TO MANAGE</h4>
+
+<p>Amazon EKS runs the Kubernetes management infrastructure across multiple AWS Availability Zones, automatically detects and replaces unhealthy control plane nodes, and provides on-demand upgrades and patching. You simply provision worker nodes and connect them to the provided Amazon EKS endpoint.</p>
+
+<h4 id="Secure_by_Default">SECURE BY DEFAULT</h4>
+
+<p>Secure and encrypted communication channels are automatically setup between your worker nodes and the managed control plane, making your infrastructure running on Amazon EKS secure by default.&nbsp;</p>
+
+<h4 id="Built_with_the_Community">BUILT WITH THE COMMUNITY</h4>
+
+<p>AWS actively works with the Kubernetes community, including making contributions to the Kubernetes code base that help Amazon EKS users take advantage of AWS services and features.</p>
+
+<h4 id="Conformant_and_Compatible">CONFORMANT AND COMPATIBLE</h4>
+
+<p>Amazon EKS runs upstream Kubernetes and is certified Kubernetes conformant, so applications managed by Amazon EKS are fully compatible with applications managed by any standard Kubernetes environment.&nbsp;</p>
+
+<h2>Application Architecture</h2>
+
+<figure class="wp-block-image"><img src="https://d1.awsstatic.com/Getting%20Started/eks-project/EKS-demo-app.e7ce7b188f2662b8573b5881a6b843e09caf729a.png" alt="EKS-demo-app" /></figure>
+
+<p>To understand how EKS works I advice to work on these two workshops</p>
+
+<p>https://eksworkshop.com/</p>
+
+<p>https://aws.amazon.com/getting-started/projects/deploy-kubernetes-app-amazon-eks/</p>
+
+                </div>
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                    <a href="index.html" class="back-link">← Back to all posts</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Adil Can</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cloud Services Comparison aws vs azure vs gcp — Adil Can">
+    <title>Cloud Services Comparison aws vs azure vs gcp — Adil Can</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/cloud.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+    <style>
+        .blog-post { max-width: 800px; margin: 0 auto; padding-top: 120px; }
+        .blog-post h1 { margin-bottom: 0.5rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+        .blog-date { color: var(--accent-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 2rem; display: block; }
+        .blog-content { line-height: 1.8; }
+        .blog-content p { margin-bottom: 1.2rem; color: var(--text-secondary); }
+        .blog-content h2 { margin: 2rem 0 1rem; color: var(--text-primary); }
+        .blog-content h3 { margin: 1.5rem 0 0.8rem; color: var(--text-primary); }
+        .blog-content h4 { margin: 1.2rem 0 0.6rem; color: var(--text-primary); }
+        .blog-content ul, .blog-content ol { margin: 1rem 0; padding-left: 1.5rem; color: var(--text-secondary); }
+        .blog-content li { margin-bottom: 0.5rem; }
+        .blog-content a { color: var(--accent-blue); text-decoration: underline; }
+        .blog-content a:hover { color: var(--text-primary); }
+        .blog-content img { max-width: 100%; height: auto; border-radius: var(--radius-md); margin: 1rem 0; }
+        .blog-content pre { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem; overflow-x: auto; margin: 1rem 0; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); }
+        .blog-content blockquote { border-left: 3px solid var(--accent-blue); padding-left: 1rem; margin: 1rem 0; color: var(--text-muted); }
+        .blog-content figure { margin: 1.5rem 0; }
+        .blog-content figcaption { font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-blue); font-weight: 500; margin-bottom: 2rem; }
+        .back-link:hover { color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-logo">AC</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../cloud/index.html">Cloud</a></li>
+                <li><a href="index.html" style="color: var(--text-primary);">Blog</a></li>
+                <li><a href="../social/index.html">Videos & Social</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="blog-post">
+                <a href="index.html" class="back-link">← All Posts</a>
+                <h1>Cloud Services Comparison aws vs azure vs gcp</h1>
+                <span class="blog-date">📅 2019-06-26</span>
+                <div class="blog-content">
+                    <p></p>
+
+<p>The most defining cloud battle is AWS vs Azure vs Google.&nbsp;Choosing one public cloud from  is the most difficult task for the one who wants to enter and grow in the cloud world. </p>
+
+<p>Public Cloud consists of a wide range of cloud services and products including</p>
+
+<ul class="wp-block-list"><li>Software as a Service (SaaS),</li>
+
+<li>Infrastructure as a Service (IaaS), and</li>
+
+<li>Platform as a Service (PaaS).</li>
+</ul>
+
+<p>So, lets look the differences of each platform;</p>
+
+<figure class="wp-block-image is-resized"><img src="https://adilcan.me/wp-content/uploads/2019/06/image.png" alt="" class="wp-image-1389" style="width:502px;height:366px" /></figure>
+
+<p>That look some figures from current deployments and future plans of our customers.</p>
+
+<figure class="wp-block-image"><img src="https://adilcan.me/wp-content/uploads/2019/06/image-1.png" alt="" class="wp-image-1390" /></figure>
+
+<figure class="wp-block-image is-resized"><img src="https://adilcan.me/wp-content/uploads/2019/06/image-4.png" alt="" class="wp-image-1394" style="width:700px;height:304px" /></figure>
+
+<p>What are the main differences of these three cloud providers?</p>
+
+<figure class="wp-block-table is-style-stripes"><table class="has-subtle-pale-blue-background-color has-background has-fixed-layout"><tbody><tr><td>
+  <strong>Amazon Web Services</strong>
+  </td><td>
+  <strong>Azure</strong>
+  </td><td>
+  <strong>Google Cloud</strong>
+  </td></tr><tr><td>How Old Are Platforms?   </td></tr><tr><td>
+  AWS – 12 years
+  </td><td>
+  Azure – 7 years
+  </td><td>
+  Google – 6 years
+  </td></tr><tr><td>Which one to Choose ?   </td></tr><tr><td>
+  Dominant in may features 
+  Extensive, mature offerings
+  -Enterprise
+  friendly services
+  -Open
+  and Flexible
+  -Global
+  Reach
+  </td><td>
+  •Integration
+  with Microsoft Tools
+  •Hybrid
+  Cloud
+  •Open
+  Source Support
+  
+  </td><td>
+  -Open
+  Source Support and Portability
+  -Designed
+  for cloud-based businesses
+  </td></tr><tr><td>Why not to Choose?   </td></tr><tr><td>
+  -Overwhelming Options
+  </td><td>
+  -Less Efficient Management Tooling
+  - Less Enterprise-ready
+  </td><td>
+  -Lately
+  entered IAAS market
+  -Less
+  datacenters over the world
+  -Fewer
+  services and features
+  </td></tr><tr><td>Market Share in IAAS   </td></tr><tr><td>
+  62 %
+  </td><td>
+  20 %
+  </td><td>
+  12
+  %
+  </td></tr></tbody></table></figure>
+
+<p>These are the main differences for Compute features, based on SLA, supported operating systems and maximum resources AWS is ahead.</p>
+
+<figure class="wp-block-table is-style-stripes"><table class="has-subtle-pale-green-background-color has-background has-fixed-layout"><tbody><tr><td>Compute   <strong>Features</strong>   </td><td> <strong>AWS</strong></td><td>
+  <strong>Azure</strong>
+  </td><td>
+  <strong>Google Cloud</strong>
+  </td></tr><tr><td>Maximum Processor</td><td>
+  128
+  </td><td>
+  128
+  </td><td>
+  96
+  </td></tr><tr><td>Maximum  Memory  </td><td>
+  3904
+  </td><td>
+  3800
+  
+  </td><td>
+  1433
+  </td></tr><tr><td>
+  SLA Supported
+  </td><td>EC2 : 99.95% <br>S3 : 99.9% </td><td>
+  99.9% Uptime
+  </td><td>
+  99.95
+  % Uptime
+  </td></tr><tr><td>
+  OS Supported
+  </td><td>Windows, All Linux/ Cloud Linux, Oracle   Linux   </td><td>Windows, All Linux, Oracle Linux   </td><td>Windows,   All Linux   </td></tr><tr><td>
+  Instance Families
+  </td><td>
+  7
+  </td><td>
+  &nbsp;4 
+  </td><td>
+  4
+  </td></tr><tr><td>
+  Instance Types
+  </td><td>
+  38
+  </td><td>
+  33
+  </td><td>
+  18
+  </td></tr></tbody></table></figure>
+
+<figure class="wp-block-table is-style-stripes"><table class="has-subtle-pale-pink-background-color has-background has-fixed-layout"><tbody><tr><td> <strong>Storage Features</strong>   </td><td>AWS</td><td>
+  <strong>Azure</strong>
+  </td><td>
+  <strong>Google Cloud</strong>
+  </td></tr><tr><td> Object Storage   </td><td>S3   </td><td>
+  Blob
+  </td><td>
+  Cloud Storage
+  </td></tr><tr><td>Archive   Storage   </td><td>S3 IA   Glacier   Data Archive   </td><td>
+  Storage
+  (Cool)
+  Storage
+  (Archive)
+  
+  </td><td>
+  Nearline
+  Coldline
+  </td></tr><tr><td>Protection and DR   </td><td>Disaster Recovery   </td><td>
+  Site Recovery
+  </td><td>
+  -
+  </td></tr><tr><td>Hybrid Storage   </td><td>Storage Gateway   </td><td>
+  StorSimple
+  </td><td>
+  Egnyte
+  Sync
+  </td></tr><tr><td>Bulk Data Transfer   </td><td>Import / Export   Snowball Edge   SnowMobile   </td><td>
+  Import/Export
+  Azure Data Box
+  </td><td>
+  Storage
+  Transfer Service
+  </td></tr><tr><td>Backup   </td><td>Object Storage   Cold Archive Storage   Storage Gateway    </td><td>
+  Backup
+  </td><td>
+  
+  </td></tr></tbody></table></figure>
+
+<figure class="wp-block-table is-style-stripes"><table class="has-subtle-pale-green-background-color has-background has-fixed-layout"><tbody><tr><td>
+  <strong>Features</strong>
+  </td><td>AWS</td><td>
+  <strong>Azure</strong>
+  </td><td>
+  <strong>Google Cloud</strong>
+  </td></tr><tr><td>
+  Caching
+  </td><td>ElastiCache   (Redis, Memcache)   </td><td>
+  RedisCache
+  </td><td>
+  CloudCDN
+  </td></tr><tr><td>
+  Block
+  Storage
+  </td><td>
+  EBS
+  </td><td>
+  Page
+  Blobs
+  
+  </td><td>
+  Persistent
+  Disks
+  </td></tr><tr><td>
+  No SQL
+  </td><td>
+  DynamoDB
+  </td><td>
+  CosmosDB
+  </td><td>
+  -
+  </td></tr><tr><td>
+  DB Migration
+  </td><td>
+  Database Migration Service
+  </td><td>
+  Database Migration Service
+  </td><td>
+  
+  </td></tr><tr><td>  Manage DataWarehouse   </td><td>
+  Redshift
+  </td><td>
+  SQL Data Warehouse
+  </td><td>
+  
+  </td></tr><tr><td>Manage Relational DB   </td><td>
+  RDS
+  MSSQL
+  Oracle
+  MySQL
+  PostGRE
+  Aurora
+  MariaDB
+  </td><td>
+  SQL DB
+  MySQL
+  PostGRESQL
+  </td><td>
+  Google
+  Cloud SQL
+  Cloud
+  Spanner
+  </td></tr></tbody></table></figure>
+
+<figure class="wp-block-table is-style-stripes"><table class="has-subtle-pale-blue-background-color has-background has-fixed-layout"><tbody><tr><td>
+  <strong>Features</strong>
+  </td><td>
+  <strong>Amazon Web Services</strong>
+  </td><td>
+  <strong>Azure</strong>
+  </td><td>
+  <strong>Google Cloud</strong>
+  </td></tr><tr><td>
+  Media Transcoding
+  </td><td>
+  Elastic Transcoder
+  </td><td>
+  Media Services
+  </td><td>
+  
+  </td></tr><tr><td>
+  App
+  Testing
+  </td><td>
+  Device Farm 
+  </td><td>
+  DevTest
+  Labs
+  
+  </td><td>
+  Cloud
+  Test Lab
+  </td></tr><tr><td>
+  Devops
+  </td><td>
+  CodePipeline
+  CodeBuild
+  </td><td>
+  Visual Studio Team Services
+  </td><td>
+  -
+  </td></tr><tr><td>
+  Developer Tools
+  </td><td>
+  Cloud9
+  </td><td>
+  Developer Tools
+  </td><td>
+  
+  </td></tr><tr><td>
+  Git Repositories
+  </td><td>
+  CodeCommit
+  <br>
+    ECR
+  </td><td>
+  Azure Repositories
+  </td><td>
+  Cloud
+  Source Repositories
+  </td></tr></tbody></table></figure>
+
+<figure class="wp-block-table is-style-stripes"><table class="has-subtle-pale-pink-background-color has-background has-fixed-layout"><tbody><tr><td>
+  <strong>Features</strong>
+  </td><td>
+  <strong>Amazon Web Services</strong>
+  </td><td>
+  <strong>Azure</strong>
+  </td><td>
+  <strong>Google Cloud</strong>
+  </td></tr><tr><td>
+  Authentication and Authorization
+  </td><td>
+  IAM
+  Active Directory Services
+  </td><td>
+  Active Directory
+  </td><td>
+  Cloud IAM
+  Cloud Identity-Aware Proxy
+  </td></tr><tr><td>
+  Data
+  Encryption
+  </td><td>
+  Key Management Service
+  
+  </td><td>
+  Storage
+  Service Encryption
+  
+  </td><td>
+  
+  </td></tr><tr><td>
+  Firewall
+  </td><td>
+  Web Application Firewall
+  </td><td>
+  Application Gateway
+  </td><td>
+  
+  </td></tr><tr><td>
+  Cloud Protection
+  </td><td>
+  Shield
+  </td><td>
+  ActiveDirectory
+  B2C
+  </td><td>
+  
+  </td></tr><tr><td>
+  Identity Management
+  </td><td>
+  Cognito (FB, Google, Amazon token)
+  </td><td>
+  Active Directory B2C
+  </td><td>
+  
+  </td></tr></tbody></table></figure>
+
+<p></p>
+
+                </div>
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                    <a href="index.html" class="back-link">← Back to all posts</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Adil Can</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

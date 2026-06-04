@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Migrating Classic Website Architecture to AWS — Adil Can">
+    <title>Migrating Classic Website Architecture to AWS — Adil Can</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/cloud.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+    <style>
+        .blog-post { max-width: 800px; margin: 0 auto; padding-top: 120px; }
+        .blog-post h1 { margin-bottom: 0.5rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+        .blog-date { color: var(--accent-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 2rem; display: block; }
+        .blog-content { line-height: 1.8; }
+        .blog-content p { margin-bottom: 1.2rem; color: var(--text-secondary); }
+        .blog-content h2 { margin: 2rem 0 1rem; color: var(--text-primary); }
+        .blog-content h3 { margin: 1.5rem 0 0.8rem; color: var(--text-primary); }
+        .blog-content h4 { margin: 1.2rem 0 0.6rem; color: var(--text-primary); }
+        .blog-content ul, .blog-content ol { margin: 1rem 0; padding-left: 1.5rem; color: var(--text-secondary); }
+        .blog-content li { margin-bottom: 0.5rem; }
+        .blog-content a { color: var(--accent-blue); text-decoration: underline; }
+        .blog-content a:hover { color: var(--text-primary); }
+        .blog-content img { max-width: 100%; height: auto; border-radius: var(--radius-md); margin: 1rem 0; }
+        .blog-content pre { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem; overflow-x: auto; margin: 1rem 0; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); }
+        .blog-content blockquote { border-left: 3px solid var(--accent-blue); padding-left: 1rem; margin: 1rem 0; color: var(--text-muted); }
+        .blog-content figure { margin: 1.5rem 0; }
+        .blog-content figcaption { font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-blue); font-weight: 500; margin-bottom: 2rem; }
+        .back-link:hover { color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-logo">AC</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../cloud/index.html">Cloud</a></li>
+                <li><a href="index.html" style="color: var(--text-primary);">Blog</a></li>
+                <li><a href="../social/index.html">Videos & Social</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="blog-post">
+                <a href="index.html" class="back-link">← All Posts</a>
+                <h1>Migrating Classic Website Architecture to AWS</h1>
+                <span class="blog-date">📅 2019-09-25</span>
+                <div class="blog-content">
+                    <h3 class="wp-block-heading">Classic Architecture Burdens</h3>
+
+<p>Cost: In a traditional hosting model, you have to provision servers
+to handle the peak capacity. The system is consuming resources and wasted
+outside of these peak times.</p>
+
+<p>Handling Unexpected Peaks: You may not respond in time to
+unexpected traffic spikes.</p>
+
+<p>Reliability: System reliability is depending on the redundancy
+for both servers, networking devices, and connectivity which increase your
+total cost of ownership.</p>
+
+<p>Maintenance Costs: The lifecycle of hardware is 3 years and
+costs to migrate the system to a new one is a time consuming task.</p>
+
+<p>Time to implementation: Provision a server takes more than
+1-2 months depending on order, deployment, and implementation</p>
+
+<p>Development Lifecycle: Hardware costs for development, staging, and pre-prod should be created and sits unused for long periods , and it is impossible to make optimizations.</p>
+
+<h3 class="wp-block-heading">New
+Architecture Proposed</h3>
+
+<p>The
+following sections are the key components of a new design architecture deployed
+in AWS Cloud and explain the differences from traditional hosting architecture.
+All the deployments will be automated with Nested CloudFormation templates so
+provisioning the new environment will spin up the VPC, Auto-Scaling Group
+Servers, Load Balancers, RDS DBs, and other services.</p>
+
+<h4 class="wp-block-heading">Scalability:</h4>
+
+<p>AWS
+can automatically scale the web/application fleet on-demand to handle the
+changes in your incoming traffic. Instances can be provisioned either based on
+your scheduled peak times or a set of triggers for scaling out and back in.
+Auto Scaling works with monitoring and observability service AWS CloudWatch for
+getting metrics from existing EC2 Instances and adding/removing instances for
+load distribution. You may define the scale-out policies if the web servers CPU
+Usage is greater than 80 percent over a particular time, additional servers
+could be deployed and added to the elastic load balancer to handle the
+increase.</p>
+
+<h4 class="wp-block-heading">Disaster
+Recovery :</h4>
+
+<p>Disaster Recovery/Business Continuity is depending on your RPO/RTO Objectives and total budget for reaching these goals. The lowest cost option is backup and restore data in case of region failure to the highest costly to another running environment on another region and route the traffic with Route53 by defining latency based routing.</p>
+
+<p>The current design is running on multiple Availability Zones that gives you easy access to redundant deployment locations. The design is providing deployment EC2 hosts across multiple Availability Zones to make web application more fault-tolerant.</p>
+
+<p>For backup/restore needs, EC2 instances can have EBS volumes attached. Where EBS is an excellent platform for block storage data, you can take snapshots of EBS Volumes and store them in Amazon S3.</p>
+
+<p>EBS snapshots only backup changes since the previous one that reduces snapshot times for more frequent snapshots. You can also use an EBS snapshot as a baseline to replicate data across multiple EBS volumes and attaching those volumes to disaster site instances.</p>
+
+<p>Amazon S3 provides a highly available and redundant object store and is a great solution to keep static content such as images, videos, and other static media. By enabling S3 Cross-Region replication, you may have a replicated object storage in case of a region failure.</p>
+
+<p>Finally, for database redundancy, Amazon RDS Multi-AZ deployments increase the database availability and protect your data against unplanned outages.</p>
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><figure class="wp-block-image size-large"><img src="https://adilcan.me/wp-content/uploads/2019/09/web-app-reference-architecture.jpg?w=1024" alt="" class="wp-image-1446" /></figure>
+</figure>
+
+<h4 class="wp-block-heading">Effective Load Distribution :</h4>
+
+<p>AWS provides load distribution through the webservers with Elastic Load Balancing service. ELB supports health checks on hosts and provides distribution of traffic to instances across multi-AZs. ELB supports sticky sessions to address routing needs.</p>
+
+<p>For the Database layer, Amazon RDS provides the load distribution by adding RDS Read Replicas to provide read-only replicas of your database to scale out beyond the capacity of a single DB deployment for read-heavy database workload.</p>
+
+<h4 class="wp-block-heading">Shared
+Content Storage Efficiency :</h4>
+
+<p>AWS
+Elastic File System (EFS) provides a simple, scalable, fully managed elastic NFS
+file system to use for sharing data between several EC2 instances mainly used
+for database or consolidated logging storage. AWS EFS supports two performance
+modes, either general purpose or max I/O. By leveraging Max I/O EFS can scale
+to higher levels of throughput and performance.</p>
+
+<h4 class="wp-block-heading">Content
+Latency from S3 or EC2</h4>
+
+<p>Amazon S3 is a great solution to keep static content and also supports edge caching and streaming of these assets by interacting with CloudFront Service. CloudFront automatically routes requests for static content to the nearest edge location, so content delivered to the client with the best possible performance.</p>
+
+<p>For the dynamic content, in-memory caches can reduce the load on services and improve performance and scalability on the database tier by caching frequently accessed information. Amazon ElasticCache is a web service protocol-compliant with MemCached and Redis that you can configure the in-memory cache you create to scale with load automatically and replaced failed nodes.</p>
+
+<h4 class="wp-block-heading"><br>
+Self-Healing Infrastructure</h4>
+
+<p>AWS EC2 Autoscaling group automatically recognizes if there is any problem on EC2 Instances by monitoring with CloudWatch Alarms and stops routing traffic to that instances, terminates the instance and spin up a new instance depending on the configuration.</p>
+
+<p>Likewise, by enabling RDS Multi-AZ support, when there is a problem that occurred in master RDS, AWS will automatically flip the CNAME for DB Instance to point at the standby.</p>
+
+<h4 class="wp-block-heading">Encryption
+data at Rest and in transit</h4>
+
+<p>To meet your organizational, legal, and compliance requirements, you have to define your encryption standards based on data classification. AWS provides multiple solutions for encrypting data at rest and in transit. You can protect your data in transit using SSL or client-side encryption. Amazon ELB uses SSL/TLS protocol for encrypted connections. This feature enables traffic encryption between ELB and the clients that initiate HTTPS sessions, and for connections between ELB and EC2. Between the traffic from EC2 to RDS, you can use SSL from the application to encrypt a connection to a DB instance.</p>
+
+<p>For encryption in Rest, S3 provides default encryption on a bucket, so all objects are encrypted when they stored in the bucket either SSE-S3 or SSE-KMS. EBS Encryption can be enabled while creating Launch Configuration via CloudFormation template using AWS KMS Customer Master keys when creating encrypted volumes and snapshots. AWS RDS is also encrypted by defining in CloudFormation template.</p>
+
+<h4 class="wp-block-heading">Managing Ingestion of increased customer updates</h4>
+
+<p>We
+have several options to handle the bulk update of customer information. The
+simplest and cost-effective option depending on your code is using AWS Lambda
+service and trigger the job regularly with CloudWatch Events. For more
+complicated and multistage pipelines, it is better to use AWS Batch, which
+supports parallel execution on multiple nodes. AWS Batch can handle scheduling
+jobs, allocating resources, and following jobs stages.</p>
+
+<h4 class="wp-block-heading">Connection
+between on-premise DC and AWS</h4>
+
+<p>AWS
+DirectConnect will be used for a consistent and dedicated network connection
+from your premises to AWS. Using DirectConnect, you may have an option either 1
+GB or 10GB depending on your usage needs.</p>
+
+<p>By leveraging VPN as a backup, you may have automatic failover in case of a problem occurred in DirectConnect. AWS SSO is an AWS service that enables you to use your existing credentials from Microsoft AD to access your cloud-based applications.</p>
+
+<p></p>
+
+                </div>
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                    <a href="index.html" class="back-link">← Back to all posts</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Adil Can</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

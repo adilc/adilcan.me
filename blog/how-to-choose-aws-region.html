@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to choose AWS Region? — Adil Can">
+    <title>How to choose AWS Region? — Adil Can</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/cloud.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+    <style>
+        .blog-post { max-width: 800px; margin: 0 auto; padding-top: 120px; }
+        .blog-post h1 { margin-bottom: 0.5rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+        .blog-date { color: var(--accent-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 2rem; display: block; }
+        .blog-content { line-height: 1.8; }
+        .blog-content p { margin-bottom: 1.2rem; color: var(--text-secondary); }
+        .blog-content h2 { margin: 2rem 0 1rem; color: var(--text-primary); }
+        .blog-content h3 { margin: 1.5rem 0 0.8rem; color: var(--text-primary); }
+        .blog-content h4 { margin: 1.2rem 0 0.6rem; color: var(--text-primary); }
+        .blog-content ul, .blog-content ol { margin: 1rem 0; padding-left: 1.5rem; color: var(--text-secondary); }
+        .blog-content li { margin-bottom: 0.5rem; }
+        .blog-content a { color: var(--accent-blue); text-decoration: underline; }
+        .blog-content a:hover { color: var(--text-primary); }
+        .blog-content img { max-width: 100%; height: auto; border-radius: var(--radius-md); margin: 1rem 0; }
+        .blog-content pre { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem; overflow-x: auto; margin: 1rem 0; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); }
+        .blog-content blockquote { border-left: 3px solid var(--accent-blue); padding-left: 1rem; margin: 1rem 0; color: var(--text-muted); }
+        .blog-content figure { margin: 1.5rem 0; }
+        .blog-content figcaption { font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-blue); font-weight: 500; margin-bottom: 2rem; }
+        .back-link:hover { color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-logo">AC</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../cloud/index.html">Cloud</a></li>
+                <li><a href="index.html" style="color: var(--text-primary);">Blog</a></li>
+                <li><a href="../social/index.html">Videos & Social</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="blog-post">
+                <a href="index.html" class="back-link">← All Posts</a>
+                <h1>How to choose AWS Region?</h1>
+                <span class="blog-date">📅 2019-04-17</span>
+                <div class="blog-content">
+                    <p>Choosing an AWS region is the first decision you have to make when you set up your AWS. You can’t do anything in the AWS Management Console, SDK or CLI without choosing a region. Most AWS customers choose one based near to themselves or to their end users, which sounds like a sensible thing to do.</p>
+
+<p>There are a lot of other factors you have to consider;</p>
+
+<h2 class="wp-block-heading"><strong>AWS Regions</strong></h2>
+
+<p>The AWS Cloud spans 61 Availability Zones within 20 geographic Regions around the world, with announced plans for 15 more Availability Zones and five more Regions in Bahrain, Cape Town, Hong Kong SAR, Jakarta, and Milan.</p>
+
+<p><strong>Region &amp; Number of Availability Zones<br></strong></p>
+
+<figure class="wp-block-table"><table><tbody><tr><td><strong>US East</strong><br>N. Virginia (6),<br>Ohio (3)</td><td><strong>US West</strong><br>N. California (3),<br>Oregon (4)</td><td><strong>Canada</strong><br>Central (2)</td></tr><tr><td><strong>Asia Pacific</strong><br>Mumbai (2),<br>Seoul (2),<br>Singapore (3),<br>Sydney (3),<br>Tokyo (4),<br>Osaka-Local (1)<sup>1</sup></td><td><strong>Europe</strong><br>Frankfurt (3),<br>Ireland (3),<br>London (3),<br>Paris (3),<br>Stockholm (3)</td><td></td></tr><tr><td><strong>China</strong><br>Beijing (2),<br>Ningxia (3)</td><td><strong>South America</strong><br>São Paulo (3)</td><td><strong>GovCloud (US)</strong><br>US-East (3),<br>US-West (3)</td></tr></tbody></table></figure>
+
+<figure class="wp-block-image"><img src="https://d1.awsstatic.com/about-aws/regions/Global%20Infrastructure%20Map-Jakarta%20and%20Hong%20Kong_update.1fcad512779992000de22e2e3344c3839d2a8d6b.png" alt="AWS Global Infrastructure" /></figure>
+
+<p>If most of your users access your applications from within North America, then it typically makes sense to deploy your software in an AWS region located in the US or Canada. </p>
+
+<p>But you have to consider these;</p>
+
+<h3 class="wp-block-heading" id="cost-varies-by-region-choose-the-wrong-one-and-you-could-end-up-paying-a-lot-more">Price differences between regions</h3>
+
+<figure class="wp-block-image"><img src="https://www.concurrencylabs.com/img/posts/9-choose-region-wisely/cloudcraft-ELB+5EC2.png" alt="Architecture" /></figure>
+
+<blockquote class="wp-block-quote"><p>1 ELB sends traffic to 5 c5.large instances running Amazon Linux in the same Availability Zone. Each instance has 20GB of EBS SSD storage, and each instance receives 100GB/month from the ELB and sends 1TB/month back to the ELB - therefore the ELB processes 5.1TB/month.</p>
+</blockquote>
+
+<p></p>
+
+<figure class="wp-block-table"><table><thead><tr><th>REGION</th><th>MONTHLY COST</th></tr></thead><tbody><tr><td>N. Virginia</td><td>374.8</td></tr><tr><td>Ohio</td><td>374.8</td></tr><tr><td>Oregon</td><td>374.8</td></tr><tr><td>Mumbai</td><td>377.35</td></tr><tr><td>Stockholm</td><td>395.96</td></tr><tr><td>Canada</td><td>410.48</td></tr><tr><td>Seoul</td><td>415.8</td></tr><tr><td>Ireland</td><td>417.56</td></tr><tr><td>Frankfurt</td><td>423.5</td></tr><tr><td>Singapore</td><td>425.76</td></tr><tr><td>London</td><td>439.21</td></tr><tr><td>Paris</td><td>439.21</td></tr><tr><td>N. California</td><td>454.56</td></tr><tr><td>Tokyo</td><td>457.44</td></tr><tr><td>Sydney</td><td>472.56</td></tr><tr><td>Sao Paulo</td><td>571.18</td></tr></tbody></table></figure>
+
+<p><em>C</em></p>
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><figure class="wp-block-image"><img src="https://adilcan.me/wp-content/uploads/2019/04/screen-shot-2019-04-10-at-10.43.22-am.png?w=694" alt="" class="wp-image-1326" /></figure>
+</figure>
+
+<p>N. Virginia is typically the cheapest region</p>
+
+<p>It costs 52% more to deploy this infrastructure in Sao Paulo compared to N. Virginia. </p>
+
+<p>Not all regions in the US cost the same. N. California would cost 21% more compared to N. Virginia or Oregon.</p>
+
+<p>I would consider N. Virginia to be my first option, unless latency to my end users is unacceptable </p>
+
+<p><strong>Reserved EC2 Instance Cost and Savings vary by region</strong></p>
+
+<p>If you use EC2, chances are it is an important portion of your AWS bill. In this case, it makes sense to consider purchasing Reserved EC2 instances and save in many scenarios up to 40% in EC2 compute cost. Well, it turns out EC2 Reserved pricing varies by region</p>
+
+<figure class="wp-block-image"><img src="https://adilcan.me/wp-content/uploads/2019/04/screen-shot-2019-04-10-at-10.46.03-am.png" alt="" class="wp-image-1327" /></figure>
+
+<p></p>
+
+<h3 class="wp-block-heading" id="regions-have-different-latencies-and-data-transfer-speeds">Regions have different latencies and data transfer speeds</h3>
+
+<p>N. California can be about 20% more expensive compared to Virginia. But Oregon is typically the same price as N. Virginia. Let’s say I can deploy most of my components in Oregon, but I’m concerned about latency.</p>
+
+<p>Below chart measures latency between EC2 instances in different regions. The table below shows the average time in milliseconds it took for an EC2 instance in region A to receive a ping response from an EC2 instance in region B.</p>
+
+<figure class="wp-block-image"><img src="https://www.concurrencylabs.com/img/posts/9-choose-region-wisely/ec2-ping-table.png" alt="EC2 ping" /></figure>
+
+<ul><li>Ohio and N. Virginia offer the best latency between two regions (23ms), which makes Ohio a great option as a failover region for applications deployed in N. Virginia</li>
+
+<li>...Uploading a 1MB file from EC2 to S3. Ohio showed the best intra region EC2-to-S3 transfer time across all regions, with 81m</li>
+</ul>
+
+<figure class="wp-block-image"><img src="https://www.concurrencylabs.com/img/posts/9-choose-region-wisely/ec2-s3-1mb-table.png" alt="EC2 ping" /></figure>
+
+<p>… and one for 10MB from EC2 to S3. Ohio showed the best intraregion EC2-to-S3 transfer time across all regions, with 356ms.</p>
+
+<figure class="wp-block-image"><img src="https://www.concurrencylabs.com/img/posts/9-choose-region-wisely/ec2-s3-10mb-table.png" alt="EC2 ping" /></figure>
+
+<h3 class="wp-block-heading" id="consider-the-type-of-resource-that-is-most-important-to-you-i-e-compute-data-transfer-latency-storage-etc">Consider the type of resource that is most important to you (i.e. compute, data transfer, latency, storage, etc.)</h3>
+
+<p>From the ELB/EC2 example in this blog post, we could see a maximum price difference of 52% in a typical ELB and EC2 architecture. But if we look closer at specific resource requirements, the price differences can be even steeper.</p>
+
+<figure class="wp-block-image"><img src="https://adilcan.me/wp-content/uploads/2019/04/screen-shot-2019-04-10-at-10.50.59-am.png" alt="" class="wp-image-1328" /></figure>
+
+<p>...m5.large EC2 instance launched in Sao Paulo, you would pay 59% more compared to N. Virginia. </p>
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><figure class="wp-block-image"><img src="https://adilcan.me/wp-content/uploads/2019/04/screen-shot-2019-04-10-at-10.52.46-am.png?w=660" alt="" class="wp-image-1329" /></figure>
+</figure>
+
+<p>That’s why it’s important that you understand what type of AWS resources your applications consume the most, so you can make a much better decision regarding your AWS region.</p>
+
+<p></p>
+
+<h3 class="wp-block-heading" id="not-all-services-are-available-in-all-regions-some-take-a-very-long-time-before-they-are">Not all services are available in all regions (some take a VERY long time before they are)</h3>
+
+<p>You have an environment in N. California and want to create a serverless microservice! You would have had to wait 500 days for API Gateway to be available in N. California (Nov 21st, 2016) from the day it was first announced (July 9th, 2015). Or more than 2 years for Lambda (November 21st, 2016) from the day it was first announced in N. Virginia (November 13th, 2014).</p>
+
+<p>IAWS services that were announced in 2015 and the dates in which they were released in different regions:</p>
+
+<figure class="wp-block-image"><img src="https://www.concurrencylabs.com/img/posts/9-choose-region-wisely/service-launch-dates.png" alt="Product launches" /></figure>
+
+<ul><li>N. Virginia is the only region where all services are available from day </li>
+</ul>
+
+<ul><li>Ireland and Oregon are the two regions that follow N. Virginia in terms of feature availability.</li>
+</ul>
+
+<h3 class="wp-block-heading" id="not-all-regions-have-the-same-number-of-availability-zones">Number of Availability Zones</h3>
+
+<p>While all regions have at least 2 Availability Zones, the number of AZs varies by region. For example, North California has 3 Availability zones, while North Virginia has 6 AZs. Actually N. Virginia is the only region with 6 AZs. Ten regions have 3 Availability Zones and four regions have only 2 Availability Zones.</p>
+
+<figure class="wp-block-image"><img src="https://www.concurrencylabs.com/img/posts/9-choose-region-wisely/az-chart.png" alt="AZ per region" /></figure>
+
+<p><strong>Why does this matter?</strong> If your application with strict availability requirements, you should probably stay away from only have 2 Availability Zones. If one AZ in those regions is temporarily unavailable  you would be left with only 1 AZ to process all your transactions. </p>
+
+<p>References</p>
+
+<p>-<a href="https://www.concurrencylabs.com/blog/choose-your-aws-region-wisely/">https://www.concurrencylabs.com/blog/choose-your-aws-region-wisely/</a></p>
+
+                </div>
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                    <a href="index.html" class="back-link">← Back to all posts</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Adil Can</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

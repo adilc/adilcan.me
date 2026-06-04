@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What is Jenkins! — Adil Can">
+    <title>What is Jenkins! — Adil Can</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/cloud.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+    <style>
+        .blog-post { max-width: 800px; margin: 0 auto; padding-top: 120px; }
+        .blog-post h1 { margin-bottom: 0.5rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+        .blog-date { color: var(--accent-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 2rem; display: block; }
+        .blog-content { line-height: 1.8; }
+        .blog-content p { margin-bottom: 1.2rem; color: var(--text-secondary); }
+        .blog-content h2 { margin: 2rem 0 1rem; color: var(--text-primary); }
+        .blog-content h3 { margin: 1.5rem 0 0.8rem; color: var(--text-primary); }
+        .blog-content h4 { margin: 1.2rem 0 0.6rem; color: var(--text-primary); }
+        .blog-content ul, .blog-content ol { margin: 1rem 0; padding-left: 1.5rem; color: var(--text-secondary); }
+        .blog-content li { margin-bottom: 0.5rem; }
+        .blog-content a { color: var(--accent-blue); text-decoration: underline; }
+        .blog-content a:hover { color: var(--text-primary); }
+        .blog-content img { max-width: 100%; height: auto; border-radius: var(--radius-md); margin: 1rem 0; }
+        .blog-content pre { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem; overflow-x: auto; margin: 1rem 0; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); }
+        .blog-content blockquote { border-left: 3px solid var(--accent-blue); padding-left: 1rem; margin: 1rem 0; color: var(--text-muted); }
+        .blog-content figure { margin: 1.5rem 0; }
+        .blog-content figcaption { font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-blue); font-weight: 500; margin-bottom: 2rem; }
+        .back-link:hover { color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-logo">AC</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../cloud/index.html">Cloud</a></li>
+                <li><a href="index.html" style="color: var(--text-primary);">Blog</a></li>
+                <li><a href="../social/index.html">Videos & Social</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="blog-post">
+                <a href="index.html" class="back-link">← All Posts</a>
+                <h1>What is Jenkins!</h1>
+                <span class="blog-date">📅 2019-04-05</span>
+                <div class="blog-content">
+                    <h3>Jenkins offers a simple way to set up a continuous integration and continuous delivery environment for almost any combination of languages and source code repositories.</h3>
+
+<p>Jenkins offers a simple way to set up a continuous integration or continuous delivery environment for almost any combination of languages and source code repositories using pipelines, as well as automating other routine development tasks. While Jenkins doesn’t eliminate the need to create scripts for individual steps, it does give you a faster and more robust way to integrate your entire chain of build, test, and deployment tools than you can easily build yourself.</p>
+
+<h2>How to install Jenkins on Ubuntu 18.04</h2>
+
+<p>Install Java Version 8 – Jenkins is a Java based application, hence Java is a must.</p>
+
+<p>Install Apache Tomcat Version 9 – Tomcat is required to deploy Jenkins war file.</p>
+
+<p>Download Jenkins war File – This war is required to install Jenkins.</p>
+
+<p>Deploy Jenkins war File – Jenkins war file needs to be deployed using Tomcat to run Jenkins.</p>
+
+<p>Install Suggested&nbsp;Plugins –&nbsp;Install a list of plugins suggested by Jenkins.</p>
+
+<p></p>
+
+<h2><strong>Step 1: Install Java Version 8</strong></h2>
+
+<p>To install Java version 8 execute&nbsp;the below command:</p>
+
+<p><strong>sudo yum install java-1.8.0-openjdk</strong></p>
+
+<h2><strong>Step 2: Install Apache Tomcat 9</strong></h2>
+
+<p>We need to deploy the Jenkins war file by using Apache Tomcat. I will use <strong>wget command</strong>&nbsp;to install specific version of Apache Tomcat i.e. Tomcat 9 in this case.</p>
+
+<ul><li>First, to install wget execute the below command:</li></ul>
+
+<p><strong>sudo yum install wget</strong></p>
+
+<ul><li>Now use wget to download the Tar file for Tomcat 9</li></ul>
+
+<p><strong>wget </strong>http://apache.osuosl.org/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17.tar.gz</p>
+
+<ul><li>Next, extract the contents from this downloaded Tomcat 9 tar file. For this I will use tar command:</li></ul>
+
+<p><strong>tar xzf </strong>apache-tomcat-9.0.17.tar.gz</p>
+
+<ul><li>Provide a username and password for Apache Tomcat.</li></ul>
+
+<p><strong>vim /home/adilcan/tomcat9/conf/tomcat-users.xml</strong></p>
+
+<pre class="wp-block-preformatted">&lt;?xml version='1.0' encoding='utf-8'?&gt; &lt;tomcat-users&gt; &nbsp;&nbsp;&nbsp; &lt;role rolename="manager-gui"/&gt; &nbsp;&nbsp;&nbsp; &lt;role rolename="manager-script"/&gt; &nbsp;&nbsp;&nbsp; &lt;role rolename="manager-jmx"/&gt; &nbsp;&nbsp;&nbsp; &lt;role rolename="manager-jmx"/&gt; &nbsp;&nbsp;&nbsp; &lt;role rolename="admin-gui"/&gt; &nbsp;&nbsp;&nbsp; &lt;role rolename="admin-script"/&gt; &nbsp;&nbsp;&nbsp; &lt;user username="adilcan" password="adilcan" roles="manager-gui,manager-script,manager-jmx,manager-status,admin-gui,admin-script"/&gt; &lt;/tomcat-users&gt;</pre>
+
+<ul><li>Start Apache Tomcat now, but change directory to Tomcat9 </li></ul>
+
+<p><strong>cd tomcat9</strong></p>
+
+<ul><li>To start Tomcat use the below command:</li></ul>
+
+<p><strong>./bin/startup.sh</strong></p>
+
+<ul><li>Now open your browser and go localhost:8080 to confirm that Tomcat is up and running.</li></ul>
+
+<h2><strong>Step 3: Download Jenkins war File</strong></h2>
+
+<p>To get the release list of Jenkins war you can use the URL <em><strong><a rel="noreferrer noopener" href="http://updates.jenkins-ci.org/download/war/" target="_blank">Jenkins releases</a></strong></em></p>
+
+<p>Now download Jenkins war file by using wget command:</p>
+
+<p><strong>wget <a href="http://updates.jenkins-ci.org/download/war/2.170/jenkins.war">http://updates.jenkins-ci.org/download/war/2.170/jenkins.war</a></strong></p>
+
+<h2><strong>Step 4: Deploy Jenkins war File&nbsp;</strong></h2>
+
+<ul><li>To deploy Jenkins war file that you have downloaded in the previous step, open your browser and access localhost:8080 again. Now click on the Manager App.</li></ul>
+
+<ul><li>When you click on the Manager app, it will ask for username and password. If you remember I have given one single username and password for all the roles i.e. edureka. Type the below mentioned username and password and click OK.</li></ul>
+
+<blockquote class="wp-block-quote"><p>Username: adilcan</p><p>Password: adilcan</p></blockquote>
+
+<ul><li>Now you will be directed to&nbsp;&nbsp;Tomcat web application manager page. When you scroll down you will find an option called Deploy. Over here you need to give the context path, i.e. /jenkins and directory URL, i.e. location of the Jenkins war file in your system in my case it is /home/edureka/jenkins.war and finally click on Deploy.</li></ul>
+
+<h2><strong>Step 5: Install Suggested&nbsp;Plugins&nbsp;</strong></h2>
+
+<p></p>
+
+<ul><li>This is the location that contains your one time password for Jenkins i.e.<strong>/home/adilcan/.jenkins/secrets/initialAdminPassword</strong>&nbsp;in my&nbsp;case, it will be different for you. Hence, just copy the path from the screen on your end&nbsp;and go back to the terminal.</li></ul>
+
+<ul><li>Finally, use the following command to get your one time password:</li></ul>
+
+<p><strong>cat &lt;paste the location that you have copied&gt;</strong><br></p>
+
+<ul><li>Just copy this password and paste it in the Administrator password text-box in the Unlock Jenkins page. Please refer to the below snapshot. </li></ul>
+
+<p></p>
+
+<ul><li>Install suggested  plugins.</li></ul>
+
+<p></p>
+
+<ul><li>Once the plugins are installed, you will be directed to a page where you have to Create First Admin User. Please fill your relevant details.</li></ul>
+
+<p><strong>Congratulations!</strong>&nbsp;Jenkins is ready now, once you click on start using Jenkins you will be directed to Jenkins dashboard. You can now use Jenkins to continuously trigger build and test for every change made in the source code.</p>
+
+                </div>
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                    <a href="index.html" class="back-link">← Back to all posts</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Adil Can</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
